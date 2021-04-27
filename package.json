@@ -1,0 +1,46 @@
+{
+  "name": "health-net",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon server.js",
+    "test-server": "PORT=8779 DB=ESWagersTest node server.js",
+    "start-https": "CERT=config/https/localhost.crt KEY=config/https/localhost.key nodemon server.js",
+    "test-prod": "NODE_ENV=production CERT=/etc/letsencrypt/live/e-oj.com/fullchain.pem KEY=/etc/letsencrypt/live/e-oj.com/privkey.pem nodemon server.js",
+    "start-prod": "NODE_ENV=production CERT=/etc/letsencrypt/live/e-oj.com/fullchain.pem KEY=/etc/letsencrypt/live/e-oj.com/privkey.pem forever start server.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.0",
+    "bluebird": "^3.5.3",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-favicon": "^2.0.1",
+    "fawn": "^2.1.5",
+    "ffmpeg-static": "^4.0.1",
+    "ffprobe-static": "^3.0.0",
+    "file-type": "^14.1.4",
+    "fluent-ffmpeg": "^2.1.2",
+    "helmet": "^3.15.0",
+    "jest-esm-transformer": "^1.0.0",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.20",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "multer-gridfs-storage": "^4.0.2",
+    "node": "latest",
+    "nodemailer": "^6.4.6",
+    "read-chunk": "^3.0.0",
+    "validator": "^13.5.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.9",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "jest": "^26.6.3"
+  }
+}
